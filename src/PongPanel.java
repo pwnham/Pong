@@ -56,7 +56,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		addKeyListener(this);
 
 		// call step() 60 fps
-		Timer timer = new Timer(1000 / 60, this);
+		Timer timer = new Timer(1000 / 120, this);
 		timer.start();
 	}
 
@@ -79,7 +79,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 					if (playerTwoY - paddleSpeed > 0)
 						playerTwoY -= paddleSpeed;
 				} else if (sPressed) {
-					if (playerTwoY + paddleSpeed < getHeight())
+					if (playerTwoY + playerTwoHeight + paddleSpeed < getHeight())
 						playerTwoY += paddleSpeed;
 				}
 			}
